@@ -11,7 +11,7 @@ export const portfolioData = {
   } as Profile,
 
   languages: ["English", "Hindi", "Marathi"],
-  
+
   hobbies: [
     { name: 'Sketching', icon: SketchIcon },
     { name: 'Reading', icon: BookOpenIcon },
@@ -25,10 +25,10 @@ export const portfolioData = {
   ] as Education[],
 
   experience: [
-    { 
-      role: "Junior Architect", 
-      company: "Tushar Desai Associates, Mumbai", 
-      dates: "Jul 2024 - Oct 2025", 
+    {
+      role: "Junior Architect",
+      company: "Tushar Desai Associates, Mumbai",
+      dates: "Jul 2024 - Oct 2025",
       description: "During my tenure, I worked on Architectural Projects and Interior design projects.",
       projects: [
         "WIPRO Office, Airoli: design, detailing, MEP, finishing.",
@@ -36,17 +36,17 @@ export const portfolioData = {
         "Green Acres School, Mulund: working drawing and site coordination."
       ]
     },
-    { 
-      role: "Freelance", 
-      company: "Ar. Rahul Chemburkar and Vaastu Vidhaan Project", 
-      dates: "Jun 2023 - Aug 2023", 
+    {
+      role: "Freelance",
+      company: "Ar. Rahul Chemburkar and Vaastu Vidhaan Project",
+      dates: "Jun 2023 - Aug 2023",
       description: "Conceptual Design and Presentation for Chanakya Excellence Center.",
       projects: []
     },
-    { 
-      role: "Internship", 
-      company: "Vaastu Vidhaan Project, Mumbai", 
-      dates: "Dec 2022 - May 2023", 
+    {
+      role: "Internship",
+      company: "Vaastu Vidhaan Project, Mumbai",
+      dates: "Dec 2022 - May 2023",
       description: "Worked on Architectural Heritage Conservation Projects and design projects such as Temple design.",
       projects: []
     },
@@ -73,13 +73,10 @@ export const portfolioData = {
       scope: ["Layouts and space finalization", "MEP layouts and vendor coordination", "Preparing GFC's and finishing drawings", "Site coordination and visits"],
       coverImage: "/images/projects/wipro-office/breakout.jpg",
       images: [
-        "/images/projects/wipro-office/reception.jpg",
-        "/images/projects/wipro-office/corridor.jpg",
-        "/images/projects/wipro-office/plan.jpg",
         "/images/projects/wipro-office/breakout.jpg"
       ],
       drawings: [
-        "/images/projects/wipro-office/plan.jpg"
+        "/images/projects/wipro-office/drawings/drawing-1.jpg"
       ]
     },
     {
@@ -91,13 +88,10 @@ export const portfolioData = {
       scope: ["Site analysis and design philosophy", "Classroom module development", "Master planning and zoning", "Architectural sections and elevations"],
       coverImage: "/images/projects/gyaan-mandir/cover.jpg",
       images: [
-        "/images/projects/gyaan-mandir/cover.jpg",
-        "/images/projects/gyaan-mandir/elevation.jpg",
-        "/images/projects/gyaan-mandir/courtyard.jpg",
-        "/images/projects/gyaan-mandir/classroom.jpg"
+        "/images/projects/gyaan-mandir/cover.jpg"
       ],
       drawings: [
-        "/images/projects/gyaan-mandir/elevation.jpg"
+        "/images/projects/gyaan-mandir/cover.jpg"
       ]
     },
     {
@@ -109,14 +103,10 @@ export const portfolioData = {
       scope: ["Presentation Drawings for client meetings", "3D presentation and study model preparation"],
       coverImage: "/images/projects/temple-complex/cover.jpg",
       images: [
-        "/images/projects/temple-complex/cover.jpg",
-        "/images/projects/temple-complex/model.jpg",
-        "/images/projects/temple-complex/plan.jpg",
-        "/images/projects/temple-complex/elevation.jpg"
+        "/images/projects/temple-complex/cover.jpg"
       ],
       drawings: [
-        "/images/projects/temple-complex/plan.jpg",
-        "/images/projects/temple-complex/elevation.jpg"
+        "/images/projects/temple-complex/cover.jpg"
       ]
     },
     {
@@ -128,13 +118,10 @@ export const portfolioData = {
       scope: ["Layouts and space finalization", "MEP layouts and vendor coordination", "Preparing GFC's and finishing drawings", "Site coordination"],
       coverImage: "/images/projects/rapg-office/cover.jpg",
       images: [
-        "/images/projects/rapg-office/cover.jpg",
-        "/images/projects/rapg-office/conference.jpg",
-        "/images/projects/rapg-office/pantry.jpg",
-        "/images/projects/rapg-office/plan.jpg"
+        "/images/projects/rapg-office/cover.jpg"
       ],
       drawings: [
-        "/images/projects/rapg-office/plan.jpg"
+        "/images/projects/rapg-office/cover.jpg"
       ]
     },
     {
