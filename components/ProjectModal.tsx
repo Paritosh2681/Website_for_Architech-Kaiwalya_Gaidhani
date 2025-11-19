@@ -73,6 +73,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </ul>
           {project.drawings && project.drawings.length > 0 && (
             <Link to={`/project/${project.id}/drawings`}
+              onClick={onClose}
               className="mt-6 inline-block bg-primary text-white font-bold py-2 px-4 rounded hover:bg-primary-dark transition-colors"
             >
               Drawings
