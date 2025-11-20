@@ -74,6 +74,7 @@ const drawingsLoader = (): Plugin => {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
+    base: '/Website_for_Architech-Kaiwalya_Gaidhani/',
     server: {
       port: 3000,
       host: '0.0.0.0',
