@@ -71,9 +71,9 @@ export const portfolioData = {
       location: "Airoli, Navi Mumbai",
       description: "The project aims to create a workplace for WIPRO. It focuses on designing ODC zones based on each department's needs, incorporating designated cabins, discussion rooms, training rooms, a cafeteria, and a board room with an executive zone. The theme was to showcase the fabric story of Maharashtra through the design, inspired by the 'Solapuri Chadder'.",
       scope: ["Layouts and space finalization", "MEP layouts and vendor coordination", "Preparing GFC's and finishing drawings", "Site coordination and visits"],
-      coverImage: "/images/projects/wipro-office/breakout.jpg",
+      coverImage: "images/projects/wipro-office/breakout.jpg",
       images: [
-        "/images/projects/wipro-office/breakout.jpg"
+        "images/projects/wipro-office/breakout.jpg"
       ],
       drawings: []
     },
@@ -84,12 +84,12 @@ export const portfolioData = {
       location: "Palghar, Maharashtra",
       description: "A school designed as a holistic learning environment where students experience the 'joy of learning'. The project focuses on creating variation in learning spaces, where the built environment contributes to the pedagogical process. The design is based on creating four interaction nodes, visualized as courtyards interlinked through a 'Learning Axis'.",
       scope: ["Site analysis and design philosophy", "Classroom module development", "Master planning and zoning", "Architectural sections and elevations"],
-      coverImage: "/images/projects/gyaan-mandir/cover.jpg",
+      coverImage: "images/projects/gyaan-mandir/cover.jpg",
       images: [
-        "/images/projects/gyaan-mandir/cover.jpg"
+        "images/projects/gyaan-mandir/cover.jpg"
       ],
       drawings: [
-        "/images/projects/gyaan-mandir/cover.jpg"
+        "images/projects/gyaan-mandir/cover.jpg"
       ]
     },
     {
@@ -99,12 +99,12 @@ export const portfolioData = {
       location: "Ponda, Goa",
       description: "The project aims to design a temple complex for the Kanekar Community. The main temple is dedicated to Shree Mahalaxmi and Panchayatan Devta, with subsidiary spaces like an admin office, bhojanshala, yagnashala, and gurukul. The design derives its form from typical Goan temple architecture, responding to its context.",
       scope: ["Presentation Drawings for client meetings", "3D presentation and study model preparation"],
-      coverImage: "/images/projects/temple-complex/cover.jpg",
+      coverImage: "images/projects/temple-complex/cover.jpg",
       images: [
-        "/images/projects/temple-complex/cover.jpg"
+        "images/projects/temple-complex/cover.jpg"
       ],
       drawings: [
-        "/images/projects/temple-complex/cover.jpg"
+        "images/projects/temple-complex/cover.jpg"
       ]
     },
     {
@@ -114,12 +114,12 @@ export const portfolioData = {
       location: "Chembur, Mumbai",
       description: "The project involved converting a school floor into a modern office space for RAPG employees. The design features modern interiors with exposed concrete finishes and wooden textured surfaces, creating distinct workstation zones, cabins, and meeting rooms.",
       scope: ["Layouts and space finalization", "MEP layouts and vendor coordination", "Preparing GFC's and finishing drawings", "Site coordination"],
-      coverImage: "/images/projects/rapg-office/cover.jpg",
+      coverImage: "images/projects/rapg-office/cover.jpg",
       images: [
-        "/images/projects/rapg-office/cover.jpg"
+        "images/projects/rapg-office/cover.jpg"
       ],
       drawings: [
-        "/images/projects/rapg-office/cover.jpg"
+        "images/projects/rapg-office/cover.jpg"
       ]
     },
     {
@@ -129,9 +129,9 @@ export const portfolioData = {
       location: "Mulund, Mumbai",
       description: "The project focuses on designing a school for Green Acres Academy in Mulund, Mumbai. The school includes a preschool section as well as primary to secondary sections. The construction is being carried out in three phases. I contributed to the third phase, which encompasses the sixth and seventh floors.",
       scope: ["Producing GFC's for project's 3rd phase - 6th and 7th floor", "Co-ordination with site person/site manager for smooth execution of work."],
-      coverImage: "/images/projects/green-acres-academy/cover.jpg",
-      images: ["/images/projects/green-acres-academy/cover.jpg"],
-      drawings: ["/images/projects/green-acres-academy/cover.jpg"]
+      coverImage: "images/projects/green-acres-academy/cover.jpg",
+      images: ["images/projects/green-acres-academy/cover.jpg"],
+      drawings: ["images/projects/green-acres-academy/cover.jpg"]
     },
     {
       id: "shree-shantadurga-temple",
@@ -140,9 +140,9 @@ export const portfolioData = {
       location: "Dhargal, Goa",
       description: "The project focuses on the redesign of the temple 'Shikhar' based on the study of typical Goan temple architecture. It aims to reinstate the original character of the temple. The restoration of the temple and temple complex will be undertaken in future. The project also aims to revive the traditional 'kaavi' art present in the temple and temple premises.",
       scope: ["Preparing presentation drawing for the design of the shikhar"],
-      coverImage: "/images/projects/shree-shantadurga-temple/cover.jpg",
-      images: ["/images/projects/shree-shantadurga-temple/cover.jpg"],
-      drawings: ["/images/projects/shree-shantadurga-temple/cover.jpg"]
+      coverImage: "images/projects/shree-shantadurga-temple/cover.jpg",
+      images: ["images/projects/shree-shantadurga-temple/cover.jpg"],
+      drawings: ["images/projects/shree-shantadurga-temple/cover.jpg"]
     },
     {
       id: "deulwadi",
@@ -151,9 +151,9 @@ export const portfolioData = {
       location: "Chembur, Mumbai",
       description: "The project focuses on the restoration and reinstating the original character of the temples present in this heritage temple complex. The 'Bhiulingeshwar Temple' of Deulwadi, Chembur belongs to a coastal typology of temples, typically found near Mumbai. The temple complex has significant importance as a beautiful community space. The restoration work includes the roof of ram mandali in the Deulwadi.",
       scope: ["Photographic Documentation of Ram Mandir in the Deulwadi", "Preparation of Measured Drawing of Ram Mandir", "Preparation of presentation for MHCC"],
-      coverImage: "/images/projects/deulwadi/cover.jpg",
-      images: ["/images/projects/deulwadi/cover.jpg"],
-      drawings: ["/images/projects/deulwadi/cover.jpg"]
+      coverImage: "images/projects/deulwadi/cover.jpg",
+      images: ["images/projects/deulwadi/cover.jpg"],
+      drawings: ["images/projects/deulwadi/cover.jpg"]
     },
     {
       id: "anant-temple",
@@ -162,9 +162,9 @@ export const portfolioData = {
       location: "Savoi Verem, Goa",
       description: "The project focuses on the restoration and reinstating the original charecter of the temples and its surrounding waterbodies. The temple belongs to typical temple architecture found in Goa.In the first phase restoration of the temple roof and water bodies is to be undertaken . Currently roof work is completed and restoration of surrounding water are in progress",
       scope: ["Presentation Drawing for the proposal for reinstating surrounding waterbodies", "Preparing 3D model for the proposal of waterbody.", "Documentation of the roof anf the ceiling of the temple."],
-      coverImage: "/images/projects/anant-temple/cover.jpg",
-      images: ["/images/projects/anant-temple/cover.jpg"],
-      drawings: ["/images/projects/anant-temple/cover.jpg"]
+      coverImage: "images/projects/anant-temple/cover.jpg",
+      images: ["images/projects/anant-temple/cover.jpg"],
+      drawings: ["images/projects/anant-temple/cover.jpg"]
     },
     {
       id: "mumbai-pyaavs",
@@ -173,9 +173,9 @@ export const portfolioData = {
       location: "Dadar, Mumbai",
       description: "The project focuses on the restoration and reinstating the original character of Pyaavs in the current urban fabric of Mumbai. The Pyaavs are a unique facet of the socio-cultural heritage of Mumbai, located at important locations like public chowks and old tram stations. The work included the VJBU Pyaas, Anand Vitthal Kowli Pyaav, and Kalachowky Pyaav.",
       scope: ["Preparing As Built Drawing for VJBU Pyaas and Anand Vitthal Kowli Pyaav", "Updating 3D Model of VJBU Pyaav and Anand Vitthal Kowli Pyaav", "Preparation of presentation Drawing and 3D Model for Kalachowky pyaav"],
-      coverImage: "/images/projects/mumbai-pyaavs/cover.jpg",
-      images: ["/images/projects/mumbai-pyaavs/cover.jpg"],
-      drawings: ["/images/projects/mumbai-pyaavs/cover.jpg"]
+      coverImage: "images/projects/mumbai-pyaavs/cover.jpg",
+      images: ["images/projects/mumbai-pyaavs/cover.jpg"],
+      drawings: ["images/projects/mumbai-pyaavs/cover.jpg"]
     },
     {
       id: "chanakya-excellence-center",
@@ -189,9 +189,9 @@ export const portfolioData = {
         "Landscaped Area--- Approx 28,000 sqm",
         "Roads and Pathways--- Approx 5000 sqm"
       ],
-      coverImage: "/images/projects/chanakya-excellence-center/cover.jpg",
-      images: ["/images/projects/chanakya-excellence-center/cover.jpg"],
-      drawings: ["/images/projects/chanakya-excellence-center/cover.jpg"]
+      coverImage: "images/projects/chanakya-excellence-center/cover.jpg",
+      images: ["images/projects/chanakya-excellence-center/cover.jpg"],
+      drawings: ["images/projects/chanakya-excellence-center/cover.jpg"]
     }
   ] as Project[],
 };

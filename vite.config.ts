@@ -21,7 +21,7 @@ const drawingsLoader = (): Plugin => {
             const files = fs.readdirSync(drawingsDir);
             const images = files
               .filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
-              .map(file => `/images/projects/${project}/drawings/${file}`);
+              .map(file => `images/projects/${project}/drawings/${file}`);
             
             if (images.length > 0) {
                console.log(`Found ${images.length} drawings for ${project}`);
