@@ -53,7 +53,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/Website_for_Architech-Kaiwalya_Gaidhani">
       <Routes>
         <Route path="/" element={<MainLayout openModal={openModal} isScrolled={isScrolled} />} />
         <Route path="/project/:projectId/drawings" element={<DrawingsPage />} />
