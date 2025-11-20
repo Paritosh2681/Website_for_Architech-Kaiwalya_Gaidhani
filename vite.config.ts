@@ -6,27 +6,32 @@ import react from '@vitejs/plugin-react';
 const drawingsLoader = (): Plugin => {
   const virtualModuleId = 'virtual:drawings';
   const resolvedVirtualModuleId = '\0' + virtualModuleId;
-  let drawingsCache: Record<string, string[]> | null = null;
 
   const getDrawings = () => {
-    const projectsDir = path.resolve(__dirname, 'public/images/projects');
+    const projectsDir = path.resolve(process.cwd(), 'public/images/projects');
     const drawingsMap: Record<string, string[]> = {};
 
-    if (fs.existsSync(projectsDir)) {
-      const projects = fs.readdirSync(projectsDir);
-      projects.forEach(project => {
-        const drawingsDir = path.join(projectsDir, project, 'drawings');
-        if (fs.existsSync(drawingsDir)) {
-          const files = fs.readdirSync(drawingsDir);
-          const images = files
-            .filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
-            .map(file => `/images/projects/${project}/drawings/${file}`);
-
-          if (images.length > 0) {
+    try {
+      if (fs.existsSync(projectsDir)) {
+        const projects = fs.readdirSync(projectsDir);
+        projects.forEach(project => {
+          const drawingsDir = path.join(projectsDir, project, 'drawings');
+          drawingsMap[project] = []; 
+          if (fs.existsSync(drawingsDir)) {
+            const files = fs.readdirSync(drawingsDir);
+            const images = files
+              .filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
+              .map(file => `/images/projects/${project}/drawings/${file}`);
+            
+            if (images.length > 0) {
+               console.log(`Found ${images.length} drawings for ${project}`);
+            }
             drawingsMap[project] = images;
           }
-        }
-      });
+        });
+      }
+    } catch (e) {
+      console.error("Error loading drawings:", e);
     }
     return drawingsMap;
   };
@@ -38,27 +43,28 @@ const drawingsLoader = (): Plugin => {
         return resolvedVirtualModuleId;
       }
     },
-    load(id, options) {
-      const isDev = options?.ssr === false;
+    load(id) {
       if (id === resolvedVirtualModuleId) {
-        // In development, always re-read the directory.
-        // In build, read it once.
-        if (isDev || !drawingsCache) {
-          drawingsCache = getDrawings();
-        }
-        return `export default ${JSON.stringify(drawingsCache)}`;
+        const drawings = getDrawings();
+        return `export default ${JSON.stringify(drawings)}`;
       }
     },
     configureServer(server) {
-      server.watcher.add(path.resolve(__dirname, 'public/images/projects'));
-
-      server.watcher.on('add', (file) => {
-        if (file.includes(path.join('images', 'projects')) && file.includes('drawings')) {
+      const projectsDir = path.resolve(process.cwd(), 'public/images/projects');
+      server.watcher.add(projectsDir);
+      
+      server.watcher.on('all', (eventName, file) => {
+        const normalizedFile = file.replace(/\\/g, '/');
+        if (normalizedFile.includes('/drawings/')) {
+          console.log(`Drawing update (${eventName}): ${file}`);
           const mod = server.moduleGraph.getModuleById(resolvedVirtualModuleId);
           if (mod) {
             server.moduleGraph.invalidateModule(mod);
-            server.ws.send({ type: 'full-reload', path: '*' });
           }
+          server.ws.send({
+            type: 'full-reload',
+            path: '*'
+          });
         }
       });
     }

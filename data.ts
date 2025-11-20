@@ -75,9 +75,7 @@ export const portfolioData = {
       images: [
         "/images/projects/wipro-office/breakout.jpg"
       ],
-      drawings: [
-        "/images/projects/wipro-office/drawings/drawing-1.jpg"
-      ]
+      drawings: []
     },
     {
       id: "gyaan-mandir",

@@ -9,11 +9,11 @@ export const DrawingsPage: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const project = portfolioData.projects.find(p => p.id === projectId);
 
-  // Use dynamic drawings if available, otherwise fallback to static data (which might be empty or contain cover image)
-  // Filter out cover images if they were added as placeholders in static data, unless that's desired.
-  // Actually, let's prioritize the dynamic list.
-  const drawings = (projectId && projectDrawings[projectId]) || [];
-  console.log('Drawings for', projectId, drawings);
+  // Use dynamic drawings if available, otherwise fallback to static data
+  const dynamicDrawings = projectId ? projectDrawings[projectId] : [];
+  const drawings = (dynamicDrawings && dynamicDrawings.length > 0) 
+    ? dynamicDrawings 
+    : (project?.drawings || []);
 
   if (!project || drawings.length === 0) {
     return (
@@ -25,15 +25,15 @@ export const DrawingsPage: React.FC = () => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center p-4">
-      <Link to="/" className="absolute top-4 right-4 text-white hover:text-primary transition-colors">
+    <div className="fixed inset-0 bg-background bg-opacity-90 backdrop-blur-sm z-50 flex flex-col items-center justify-center p-4">
+      <Link to="/" className="absolute top-4 right-4 text-text-main hover:text-primary transition-colors">
         <XIcon className="w-10 h-10" />
       </Link>
-      <h2 className="text-3xl font-serif font-bold text-white mb-8">{project.title} - Drawings</h2>
-      <div className="w-full max-w-5xl mx-auto h-full overflow-y-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-8">
+      <h2 className="text-3xl font-serif font-bold text-text-main mb-8">{project.title} - Drawings</h2>
+      <div className="w-full max-w-6xl mx-auto h-[80vh] overflow-y-auto rounded-lg bg-white/10 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {drawings.map((drawing, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div key={index} className="bg-background-alt rounded-lg shadow-lg overflow-hidden border border-border">
               <img src={drawing} alt={`${project.title} - Drawing ${index + 1}`} className="w-full h-auto object-contain" />
             </div>
           ))}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import type { Project } from '../types';
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from './icons';
 import { Link } from 'react-router-dom';
+import projectDrawings from 'virtual:drawings';
 
 interface ProjectModalProps {
   project: Project;
@@ -11,6 +12,14 @@ interface ProjectModalProps {
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(true); // Start as true for initial fade-in
+  
+  // Check for drawings from either the dynamic virtual module OR the static data.
+  // We prioritize dynamic drawings, but fallback to static data if dynamic is empty.
+  const dynamicDrawings = projectDrawings[project.id];
+  const hasDynamicDrawings = dynamicDrawings && dynamicDrawings.length > 0;
+  const hasStaticDrawings = project.drawings; // Check if the property exists, even if empty
+  
+  const hasDrawings = hasDynamicDrawings || hasStaticDrawings;
 
   // Effect for initial fade-in
   useEffect(() => {
@@ -71,7 +80,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <ul className="list-disc list-inside text-text-secondary space-y-1">
             {project.scope.map((item, index) => <li key={index}>{item}</li>)}
           </ul>
-          {project.drawings && project.drawings.length > 0 && (
+          {hasDrawings && (
             <Link to={`/project/${project.id}/drawings`}
               onClick={onClose}
               className="mt-6 inline-block bg-primary text-white font-bold py-2 px-4 rounded hover:bg-primary-dark transition-colors"
