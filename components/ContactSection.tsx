@@ -8,6 +8,8 @@ interface ContactSectionProps {
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ contact }) => {
+  const baseUrl = import.meta.env.BASE_URL;
+  
   return (
     <footer id="contact" className="bg-primary-light py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -30,7 +32,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ contact }) => {
           </div>
         </div>
         <a 
-          href="/1.KAIWALYA_PORTFOLIO_1.pdf" 
+          href={`${baseUrl}1.KAIWALYA_PORTFOLIO_1.pdf`} 
           download="Kaiwalya_Gaidhani_Portfolio.pdf"
           target="_blank"
           rel="noopener noreferrer"

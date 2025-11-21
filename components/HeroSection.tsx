@@ -2,6 +2,7 @@ import React from 'react';
 import { portfolioData } from '../data';
 
 export const HeroSection: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL;
   const scrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -12,7 +13,7 @@ export const HeroSection: React.FC = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
+        style={{ backgroundImage: `url(${baseUrl}images/hero-bg.jpg)` }}
       >
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-text-main/60"></div>
