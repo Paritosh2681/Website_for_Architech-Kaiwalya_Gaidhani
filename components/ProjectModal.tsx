@@ -12,6 +12,7 @@ interface ProjectModalProps {
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(true); // Start as true for initial fade-in
+  const baseUrl = import.meta.env.BASE_URL;
   
   // Check for drawings from either the dynamic virtual module OR the static data.
   // We prioritize dynamic drawings, but fallback to static data if dynamic is empty.
@@ -60,14 +61,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div 
           className="w-full md:w-3/5 h-1/2 md:h-full relative group" 
           style={{ 
-            backgroundImage: `url(${project.coverImage})`,
+            backgroundImage: `url(${baseUrl}${project.coverImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
         >
            {/* The main image fades in/out on top of the cover image */}
            <div 
-             style={{ backgroundImage: `url(${project.images[currentIndex]})` }} 
+             style={{ backgroundImage: `url(${baseUrl}${project.images[currentIndex]})` }} 
              className={`absolute inset-0 w-full h-full bg-center bg-cover transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
            ></div>
         </div>

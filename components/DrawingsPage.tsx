@@ -11,9 +11,12 @@ export const DrawingsPage: React.FC = () => {
 
   // Use dynamic drawings if available, otherwise fallback to static data
   const dynamicDrawings = projectId ? projectDrawings[projectId] : [];
+  const baseUrl = import.meta.env.BASE_URL;
+  
+  // Prepend base URL to all drawing paths
   const drawings = (dynamicDrawings && dynamicDrawings.length > 0) 
-    ? dynamicDrawings 
-    : (project?.drawings || []);
+    ? dynamicDrawings.map(path => `${baseUrl}${path}`)
+    : (project?.drawings || []).map(path => `${baseUrl}${path}`);
 
   if (!project || drawings.length === 0) {
     return (
