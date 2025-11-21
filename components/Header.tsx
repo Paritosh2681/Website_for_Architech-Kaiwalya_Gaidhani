@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface HeaderProps {
   isScrolled: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navLinks = [
     { href: '#about', label: 'About' },
     { href: '#experience', label: 'Experience' },
@@ -16,6 +18,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -27,6 +30,8 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               K.G.
             </a>
           </div>
+          
+          {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-8">
               {navLinks.map((link) => (
@@ -38,7 +43,43 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               ))}
             </ul>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`md:hidden p-2 rounded-md transition-colors duration-300 ${isScrolled ? 'text-text-main' : 'text-primary'}`}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <nav className="md:hidden py-4 border-t border-primary/20 bg-primary-light/80 backdrop-blur-sm rounded-b-lg shadow-lg">
+            <ul className="space-y-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a 
+                    href={link.href} 
+                    onClick={(e) => scrollToSection(e, link.href)} 
+                    className="block font-medium transition-colors duration-300 text-text-main hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );
