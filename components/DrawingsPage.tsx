@@ -13,10 +13,17 @@ export const DrawingsPage: React.FC = () => {
   const dynamicDrawings = projectId ? projectDrawings[projectId] : [];
   const baseUrl = import.meta.env.BASE_URL;
   
-  // Prepend base URL to all drawing paths
+  // Prepend base URL to all drawing paths if they don't already start with it
   const drawings = (dynamicDrawings && dynamicDrawings.length > 0) 
-    ? dynamicDrawings.map(path => `${baseUrl}${path}`)
-    : (project?.drawings || []).map(path => `${baseUrl}${path}`);
+    ? dynamicDrawings.map(path => {
+        // If path already starts with baseUrl, return as is, otherwise prepend
+        if (path.startsWith(baseUrl)) return path;
+        return path.startsWith('/') ? `${baseUrl}${path.slice(1)}` : `${baseUrl}${path}`;
+      })
+    : (project?.drawings || []).map(path => {
+        if (path.startsWith(baseUrl)) return path;
+        return path.startsWith('/') ? `${baseUrl}${path.slice(1)}` : `${baseUrl}${path}`;
+      });
 
   if (!project || drawings.length === 0) {
     return (
