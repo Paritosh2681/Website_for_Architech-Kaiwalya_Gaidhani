@@ -17,9 +17,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     >
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-        style={{ backgroundImage: `url(${baseUrl}${project.coverImage})` }}
+        style={{ backgroundImage: `url(${project.coverImage.startsWith('/') ? baseUrl + project.coverImage.slice(1) : baseUrl + project.coverImage})` }}
         aria-hidden="true"
       />
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
       <div className="relative z-10 flex flex-col justify-end h-full p-6">
         <p className="text-sm font-semibold uppercase tracking-wider text-primary-light">{project.category}</p>

@@ -61,14 +61,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div 
           className="w-full md:w-3/5 h-1/2 md:h-full relative group" 
           style={{ 
-            backgroundImage: `url(${baseUrl}${project.coverImage})`,
+            backgroundImage: `url(${project.coverImage.startsWith('/') ? baseUrl + project.coverImage.slice(1) : baseUrl + project.coverImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
         >
            {/* The main image fades in/out on top of the cover image */}
            <div 
-             style={{ backgroundImage: `url(${baseUrl}${project.images[currentIndex]})` }} 
+             style={{ backgroundImage: `url(${project.images[currentIndex].startsWith('/') ? baseUrl + project.images[currentIndex].slice(1) : baseUrl + project.images[currentIndex]})` }} 
              className={`absolute inset-0 w-full h-full bg-center bg-cover transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
            ></div>
         </div>
